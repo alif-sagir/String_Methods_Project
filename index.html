@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All String Methods Using Project</title>
+    <link rel="stylesheet" href="./assets/icon/fontawesome-free-6.2.0-web/css/all.min.css">
+    <link rel="stylesheet" href="./assets/styles/style.css">
+
+</head>
+
+<body>
+    <!-- content_area_all start-->
+    <div class="content_area_all">
+
+        <!-- title start -->
+        <div class="title">
+            <h1>string methods project</h1>
+        </div>
+        <!-- title end -->
+
+        <!-- first_area_start -->
+        <div class="first_area_full">
+            <div class="container">
+                <div class="first_area_container">
+                    <!-- first_input_and_button_area start -->
+                    <div class="first_input_and_button_area">
+                        <form action="#">
+                            <input id="first_input_value" type="string" placeholder="Enter Input...">
+
+                            <div class="first_area_all_button">
+                                <button onclick="length_button()">length</button>
+                                <button onclick="upper_case()">toUpperCase</button>
+                                <button onclick="lower_case()"> toLowerCase</button>
+                                <button onclick="trimm()">trim</button>
+                                <button onclick="trimmstart()">trimStart</button>
+                                <button onclick="trimmend()">trimEnd</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- first_input_and_button_area end -->
+
+                    <!-- first_result_area start-->
+                    <div class="first_area_result_full">
+                        <div class="first_area_result_title">
+                            <h2>Result...</h2>
+                        </div>
+                        <div class="first_area_result">
+                            <textarea id="first_area_result_show"></textarea>
+                        </div>
+                    </div>
+                    <!-- first_result_area start-->
+
+                </div>
+            </div>
+        </div>
+        <!-- first_area_end -->
+
+        <!-- second_area_start -->
+        <div class="second_area_full">
+            <div class="container">
+                <div class="second_area_container">
+                    <!-- second_area_input_and_button_area start -->
+                    <div class="second_area_input_and_button_area">
+                        <form action="#">
+                            <input id="second_input_1" type="string" placeholder="Enter input...">
+                            <input id="second_input_2" type="text" placeholder="Enter string method 1...">
+                            <input id="second_input_3" type="text" placeholder="Enter string method 2...">
+
+                            <div class="second_area_all_button">
+                                <button onclick="slice_button()" type="button">slice</button>
+                                <button onclick="substring_button()" type="button">substring</button>
+                                <button onclick="substr()" type="button">substr</button>
+                                <button onclick="replace()" type="button">replace</button>
+                                <button onclick="replaceall()" type="button">replaceAll</button>
+                                <button onclick="concat()" type="button">concat</button>
+                                <button onclick="padstart()" type="button">padStart</button>
+                                <button onclick="padend()" type="button">padEnd</button>
+                                <button onclick="charat()" type="button">charAt</button>
+                                <button onclick="charcodeat()" type="button">charCodeAt</button>
+                                <button onclick="split()" type="button">split</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- second_area_input_and_button_area end -->
+
+                    <!-- second_result_area start-->
+                    <div class="second_area_result_full">
+                        <div class="second_area_result_title">
+                            <h2>Result...</h2>
+                        </div>
+                        <div class="second_area_result">
+                            <span id="second_area_result_show"></span>
+                        </div>
+                    </div>
+                    <!-- second_result_area start-->
+                </div>
+            </div>
+        </div>
+        <!-- second_area_end -->
+    </div>
+    <!-- content_area_all end-->
+
+    <!-- js start -->
+    <script>
+        // text_convart_to length
+        function length_button() {
+            let user_value_first = first_input_value.value;
+            let lenth_value = user_value_first.length;
+
+            first_area_result_show.value = lenth_value;
+            // console.log(lenth_value);
+        }
+
+        // text_convart_ toUpperCase
+        function upper_case() {
+            let user_value_first = first_input_value.value;
+            let lenth_value = user_value_first.toUpperCase();
+
+            first_area_result_show.value = lenth_value;
+        }
+
+        // text_convart_ toLowerCase
+        function lower_case() {
+            let user_value_first = first_input_value.value;
+            let lenth_value = user_value_first.toLowerCase();
+
+            first_area_result_show.value = lenth_value;
+        }
+
+        // text_convart_ trim
+        function trimm() {
+            let user_value_first = first_input_value.value;
+            let lenth_value = user_value_first.trim();
+
+            first_area_result_show.value = lenth_value;
+        }
+
+        // text_convart_ trimStart
+        function trimmstart() {
+            let user_value_first = first_input_value.value;
+            let lenth_value = user_value_first.trimStart();
+
+            first_area_result_show.value = lenth_value;
+        }
+
+        // text_convart_ trimEnd
+        function trimmend() {
+            let user_value_first = first_input_value.value;
+            let lenth_value = user_value_first.trimEnd();
+
+            first_area_result_show.value = lenth_value;
+        }
+
+
+        //convart_to slice
+        function slice_button() {
+            let slice_input = second_input_1.value;
+            let slice_start_position = second_input_2.value;
+            let slice_end_position = second_input_3.value;
+            let slice_result = '';
+
+            if (slice_start_position > 0) {
+                slice_result = slice_input.slice(slice_start_position);
+            }
+            if (slice_end_position > 0) {
+                slice_result = slice_input.slice(slice_start_position, slice_end_position);
+            }
+
+            second_area_result_show.innerHTML = slice_result;
+            // console.log(slice_result);
+        }
+
+        //convart_to substring
+        function substring_button() {
+            let slice_input = second_input_1.value;
+            let slice_start_position = second_input_2.value;
+            let slice_end_position = second_input_3.value;
+            let slice_result = '';
+
+            if (slice_start_position > 0) {
+                slice_result = slice_input.slice(slice_start_position);
+            }
+            if (slice_end_position > 0) {
+                slice_result = slice_input.slice(slice_start_position, slice_end_position);
+            }
+
+            second_area_result_show.innerHTML = slice_result;
+        }
+
+        //convart_to substr
+
+
+        //convart_to replace
+        function replace() {
+            let replace_input = second_input_1.value;
+            let replace_position = second_input_2.value;
+            let replace_item = second_input_3.value;
+            let result = replace_input.replace(replace_position,replace_item);
+           
+            second_area_result_show.innerHTML = result;
+             
+        }
+        //convart_to replaceAll
+        function replaceall() {
+            let replaceall_input = second_input_1.value;
+            let replaceall_position = second_input_2.value;
+            let replaceall_item = second_input_3.value;
+            let result = replaceall_input.replaceAll(replaceall_position,replaceall_item);
+           
+            second_area_result_show.innerHTML = result;
+             
+        }
+        //convart_to concat
+        function concat() {
+            let concat_input1 = second_input_1.value;
+            let concat_input2 = second_input_2.value;
+            let concat_input3 = second_input_3.value;
+
+            let result1_2 = concat_input1.concat(concat_input2);
+            let result = result1_2.concat(concat_input3);
+
+            second_area_result_show.innerHTML = result;            
+        }
+        //convart_to padStart
+        function padstart() {
+            let pad_text = second_input_1.value;
+            let number = +second_input_2.value;
+            let add_item = second_input_3.value;
+        
+            let result = pad_text.padStart(number,add_item);
+
+            second_area_result_show.innerHTML = result;            
+        }
+        //convart_to padEnd
+        function padend() {
+            let pad_text = second_input_1.value;
+            let number = +second_input_2.value;
+            let add_item = second_input_3.value;
+        
+            let result = pad_text.padEnd(number,add_item);
+
+            second_area_result_show.innerHTML = result;            
+        }
+        //convart_to charAt
+        function charat() {
+            let charat_text = second_input_1.value;
+            let charat_number = +second_input_2.value;
+        
+            let result = charat_text.charAt(charat_number);
+
+            second_area_result_show.innerHTML = result;            
+        }
+        //convart_to charCodeAt
+        function charcodeat() {
+            let charcodeat_text = second_input_1.value;
+            let number = +second_input_2.value;
+           
+            let result = charcodeat_text.charCodeAt(number);
+
+            second_area_result_show.innerHTML = result;            
+        }
+        //convart_to split
+        function split() {
+            let split_text = second_input_1.value;
+            let use_split = second_input_2.value;
+        
+            let result = split_text.split(use_split);
+
+            second_area_result_show.innerHTML = result.join("<br>");            
+        }
+
+
+    </script>
+    <!-- js end -->
+</body>
+
+</html>
